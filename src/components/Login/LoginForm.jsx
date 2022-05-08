@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
+// import "./LoginForm.css";
+import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 const initialDetails = {
+    username: "",
     email: "",
-    password:"",
+    password: "",
 }
 
 const LoginForm = ( { login, error } ) => {
     const [ details, setDetails ] = useState( initialDetails );
 
-    const handleSubmit = e => { 
+    const handleSubmit = e => {
         e.preventDefault();
         login( details );
         setDetails( initialDetails );
@@ -18,26 +21,61 @@ const LoginForm = ( { login, error } ) => {
         setDetails( {
             ...details,
             [ e.target.name ]: e.target.value,
-        })
+        } )
     }
 
-  return (
-      <form onSubmit={handleSubmit}>
-          <div className="form-inner">
-              <h2>Login</h2>
-              { /*Error message*/ }
-              <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input type="email" name="email" value={details.email} className="form-control" id="email" placeholder="Enter email" onChange={ handleChange} />
-              </div>
-              <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                <input type="password" name="password" value={details.password}className="form-control" id="password" placeholder="Password" onChange={ handleChange}/>
-              </div>
-          </div>
-          <input type="submit" value="Login" />
-    </form>
-  )
+    return (
+        <Form inline>
+            <FormGroup floating>
+                <Input
+                    id="username"
+                    name="username"
+                    placeholder="Username"
+                    type="username"
+                    value={ details.username }
+                    onChange={ handleChange }
+                    autoComplete="username"
+                />
+                <Label for="username">
+                    Username
+                </Label>
+            </FormGroup>
+            <FormGroup floating>
+                <Input
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    type="email"
+                    value={ details.email }
+                    onChange={ handleChange }
+                    autoComplete="email"
+                />
+                <Label for="email">
+                    Email
+                </Label>
+            </FormGroup>
+            { ' ' }
+            <FormGroup floating>
+                <Input
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    value={ details.password }
+                    onChange={ handleChange }
+                    autoComplete="current-password"
+                />
+                <Label for="password">
+                    Password
+                </Label>
+            </FormGroup>
+            { ' ' }
+            <Button onClick={ handleSubmit }>
+                Submit
+            </Button>
+        </Form>
+
+    )
 }
 
 export default LoginForm

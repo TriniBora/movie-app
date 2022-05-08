@@ -1,0 +1,24 @@
+form{
+    display: block;
+    position: relative;
+}
+
+form:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: 1;
+    background-image: linear-gradient(to bottom right, #FFCE00, #FE1880);
+}
+
+form .form-inner{
+    position: relative;
+    display: block;
+    background-color: #FFF;
+    padding: 30px;
+    z-index: 2;
+}
