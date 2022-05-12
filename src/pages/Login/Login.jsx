@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from "react";
-import LoginForm from './LoginForm';
+import LoginForm from '../../components/LoginForm/LoginForm';
+
 
 const initialUser = {
     username: "",
     email: "",
-    password:"",
+    password: "",
 }
 
 const Login = () => {
@@ -14,26 +15,26 @@ const Login = () => {
     const [ user, setUser ] = useState( initialUser );
     const [ error, setError ] = useState( "" );
 
-    const login = details => { 
+    const login = details => {
         console.log( details );
         setUser( {
             username: details.username,
-            email:details.email,
+            email: details.email,
             password: details.password
         } );
         setIsLogginIn( true );
     }
-    
-    const logout = () => { 
+
+    const logout = () => {
         console.log( "Logout" );
         setUser( initialUser );
         setIsLogginIn( false );
     }
 
-  return (
-      <>{ isLoggedIn ? <><h1>Welcome { user.username }</h1><button onClick={logout}>Logout</button></> : <LoginForm login={ login } error={ error} /> }
-      </>
-  )
+    return (
+        <>{ isLoggedIn ? <><h1>Welcome { user.username }</h1><button onClick={ logout }>Logout</button></> : <LoginForm login={ login } error={ error } /> }
+        </>
+    )
 }
 
 export default Login

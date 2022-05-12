@@ -1,0 +1,23 @@
+/* .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: montserrat, sans-serif;
+    background-color: #666;
+    width: 100%;
+} */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 70vh;
+    background-color: #aaa;
+    margin-top: 10vh;
+
+}
+
+
+

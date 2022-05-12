@@ -1,13 +1,5 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: montserrat, sans-serif;
+    padding: 0;
+    margin: 0;
 }
-
-/* input, button{
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-}    */

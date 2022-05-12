@@ -1,10 +1,12 @@
-import Login from "./components/Login/Login";
-import "./App.css";
+import Views from "./routes/Views";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Layout>
+        <Views />
+      </Layout>
     </div>
   );
 }
