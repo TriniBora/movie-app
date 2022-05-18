@@ -1,8 +1,18 @@
-import React from 'react'
+import useConsumeData from "../../hooks/useConsumeData";
+import { apiUrl } from "../../api/constants";
 
-const Home = () => {
+const Home = ( { user } ) => {
+
+    const [ data, error, loading ] = useConsumeData( apiUrl.popularMovies );
+
     return (
-        <div>Home</div>
+        <>
+            <div>
+                <p>Bienvenidx, { user.username }!</p>
+                { data && <ul>{ data.map( ( item, index ) => <li key={ index }>{ item.name }</li> ) }</ul> }
+                { error && <p>{ error }</p> }
+            </div>
+        </>
     )
 }
 

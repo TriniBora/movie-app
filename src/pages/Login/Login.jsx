@@ -1,7 +1,6 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
-
+import Home from "../Home/Home";
 
 const initialUser = {
     username: "",
@@ -13,7 +12,8 @@ const Login = () => {
 
     const [ isLoggedIn, setIsLogginIn ] = useState( false );
     const [ user, setUser ] = useState( initialUser );
-    const [ error, setError ] = useState( "" );
+    const [ error, setError ] = useState( null );
+
 
     const login = details => {
         console.log( details );
@@ -32,7 +32,8 @@ const Login = () => {
     }
 
     return (
-        <>{ isLoggedIn ? <><h1>Welcome { user.username }</h1><button onClick={ logout }>Logout</button></> : <LoginForm login={ login } error={ error } /> }
+        <>{ isLoggedIn ? <><h1>Welcome { user.username }</h1><button onClick={ logout }>Logout</button><Home user={ user } /></> : <LoginForm login={ login } error={ error } /> }
+
         </>
     )
 }
