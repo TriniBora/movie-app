@@ -18,9 +18,10 @@ const LoginForm = ( { login, error } ) => {
     }
 
     const handleChange = e => {
+        const { name, value } = e.target;
         setDetails( {
             ...details,
-            [ e.target.name ]: e.target.value,
+            [ name ]: value,
         } )
     }
 
