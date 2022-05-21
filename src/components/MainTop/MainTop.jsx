@@ -7,8 +7,6 @@ import styles from "./MainTop.module.css";
 
 const MainTop = () => {
     const [ data, error, loading ] = useGetById( apiUrl( "movie", "280" ) );
-    console.log( data );
-
     const posterUrl = apiImgUrl( data.poster_path );
 
     return (
