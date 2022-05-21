@@ -10,7 +10,14 @@ const Header = () => {
     }
 
     return (
-        <header className={ styles.container }>{ user ? <><p>Bienvenidx, { user.username }!</p> <button onClick={ logout }>Logout</button></> : "" }</header>
+        <header className={ styles.container }>
+            { user ?
+                <>
+                    <p>Bienvenidx, { user.username }!</p>
+                    <button onClick={ logout }>Logout</button>
+                </>
+                : "" }
+        </header>
     )
 }
 

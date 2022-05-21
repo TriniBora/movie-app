@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import getData from '../api/getData';
+import { apiEndpoints } from '../api/apiConfig';
 
-const useConsumeData = ( url ) => {
+const useGetById = ( url ) => {
 
     const [ data, setData ] = useState( [] );
     const [ error, setError ] = useState( null );
@@ -9,7 +9,7 @@ const useConsumeData = ( url ) => {
 
     const getRes = async () => {
 
-        const res = await getData( url );
+        const res = await apiEndpoints.getById( url );
 
         res instanceof Error ? setError( res.message ) : setData( res );
 
@@ -26,4 +26,4 @@ const useConsumeData = ( url ) => {
 
 }
 
-export default useConsumeData
+export default useGetById
