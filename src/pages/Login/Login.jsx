@@ -8,9 +8,6 @@ const Login = () => {
 
     const { user, setUser } = useContext( UserContext );
     const [ error, setError ] = useState( null );
-    const [ isLoggedIn, setIsLoggedIn ] = useState( false );
-    // const [ auth, handleAuth ] = useContext( AuthContext );
-
 
     const login = details => {
         setUser( {
@@ -18,18 +15,12 @@ const Login = () => {
             email: details.email,
             password: details.password
         } );
-        setIsLoggedIn( true );
-        // handleAuth( true );
     }
 
-    const logout = () => {
-        setUser( null );
-        setIsLoggedIn( false );
-        // handleAuth( false );
-    }
+
 
     return (
-        <>{ isLoggedIn ? <><h1>Welcome</h1><button onClick={ logout }>Logout</button><Home /></> : <LoginForm login={ login } error={ error } /> }
+        <>{ user ? <><Home /></> : <LoginForm login={ login } error={ error } /> }
 
         </>
     )

@@ -4,14 +4,15 @@ import { apiUrl } from "../../api/constants";
 import { UserContext } from "../../context/UserContext";
 
 const Home = () => {
-    const { user } = useContext( UserContext );
-    const [ data, error, loading ] = useConsumeData( apiUrl.popularMovies );
+
+    const [ data, error, loading ] = useConsumeData( apiUrl( "movie", "popular" ) );
+    console.log( apiUrl( "movie", "popular" ) );
 
     return (
         <>
-                <p>Bienvenidx, { user.username }!</p>
+
             <div>
-                { data && <ul>{ data.map( ( item, index ) => <li key={ index }>{ item.name }</li> ) }</ul> }
+                { data && <ul>{ data.map( ( item, index ) => <li key={ index }>{ item.hasOwnProperty( "title" ) ? item.title : item.name }</li> ) }</ul> }
                 { error && <p>{ error }</p> }
             </div>
         </>
