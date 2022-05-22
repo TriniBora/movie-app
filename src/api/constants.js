@@ -11,7 +11,7 @@ export const apiUrl = ( category, subcategoryOrId ) => {
     return `${ baseUrl }${ category }/${ subcategoryOrId }?api_key=${ apiKey }`;
 }
 
-export const apiImgUrl = ( posterPath ) => {
-    return `${ imgBaseUrl }/w500${ posterPath }`;
+export const apiImgUrl = ( posterPath, width ) => {
+    return `${ imgBaseUrl }/w${ width }${ posterPath }`;
 }
 

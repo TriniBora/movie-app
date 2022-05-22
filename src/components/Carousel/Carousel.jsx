@@ -1,11 +1,15 @@
 import React from "react";
 import Slider from "react-slick";
 
+import { apiImgUrl } from "../../api/constants";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.css";
 
-const Carousel = () => {
+const Carousel = ( { data } ) => {
+
+
     const settings = {
         dots: true,
         infinite: false,
@@ -15,6 +19,7 @@ const Carousel = () => {
         initialSlide: 0,
         className: `${ styles.container }`,
         responsive: [
+
             {
                 breakpoint: 1024,
                 settings: {
@@ -45,30 +50,12 @@ const Carousel = () => {
         <div>
             <h2> Responsive </h2>
             <Slider { ...settings } >
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/300" alt="randomIMage" />
-                </div>
+                { data.map( ( el, index ) => {
+                    return <div key={ index }>
+                        <img src={ apiImgUrl( el.poster_path, 200 ) } className={ styles.poster } alt="poster" />
+                    </div>
+                }
+                ) }
             </Slider>
         </div>
 

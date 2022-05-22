@@ -7,7 +7,7 @@ import styles from "./MainTop.module.css";
 
 const MainTop = () => {
     const [ data, error, loading ] = useGetById( apiUrl( "movie", "280" ) );
-    const posterUrl = apiImgUrl( data.poster_path );
+    const posterUrl = apiImgUrl( data.backdrop_path, 1280 );
 
     return (
         <div className={ styles.container }>

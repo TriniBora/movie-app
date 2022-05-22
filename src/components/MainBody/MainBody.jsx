@@ -12,7 +12,7 @@ const MainBody = () => {
             { data && <ul>{ data.map( ( item, index ) => <li key={ index }>{ item.hasOwnProperty( "title" ) ? item.title : item.name }</li> ) }</ul> }
             { error && <p>{ error }</p> }
             </div>
-            <Carousel />
+            <Carousel data={ data } />
         </>
     )
 }
