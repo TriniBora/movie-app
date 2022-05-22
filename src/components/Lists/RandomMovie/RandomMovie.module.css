@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.image{
+        position: absolute;
+        top: 10vh; 
+        left: 0px; 
+        right: 0px; 
+        width: 100%; 
+    
+}

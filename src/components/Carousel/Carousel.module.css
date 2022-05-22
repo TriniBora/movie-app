@@ -1,7 +1,8 @@
 .container{
-    max-width: 90vw;
+    width: 95vw;
 }
 
-/* .poster{
-    width: 250px;
-} */
+.title{
+    color: #fff;
+    padding-top: 3rem;
+}

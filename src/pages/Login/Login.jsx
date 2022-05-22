@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
-// import AuthContext from "../../context/AuthContext";
 import { UserContext } from "../../context/UserContext";
 import Home from "../Home/Home";
 
