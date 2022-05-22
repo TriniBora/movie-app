@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from "../../context/UserContext";
 import styles from './Header.module.css';
 
@@ -13,8 +13,11 @@ const Header = () => {
         <header className={ styles.container }>
             { user ?
                 <>
+                    <div className={ styles.logo } />
+                    <div className={ styles.user }>
                     <p>Bienvenidx, { user.username }!</p>
-                    <button onClick={ logout }>Logout</button>
+                        <button onClick={ logout }>Logout</button>
+                    </div>
                 </>
                 : "" }
         </header>
