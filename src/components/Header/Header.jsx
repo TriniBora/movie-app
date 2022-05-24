@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from "../../context/UserContext";
+import Avatar from "../../assets/img/profile.png";
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -11,15 +12,16 @@ const Header = () => {
 
     return (
         <header className={ styles.container }>
-            { user ?
+
                 <>
                     <div className={ styles.logo } />
                     <div className={ styles.user }>
-                    <p>Bienvenidx, { user.username }!</p>
-                        <button onClick={ logout }>Logout</button>
-                    </div>
-                </>
-                : "" }
+                    { user ? <>
+                        <button onClick={ logout }><img className={ styles.avatar } src={ Avatar } alt="avatar" /></button>
+                    </>
+                        : "" }
+                </div>
+            </>
         </header>
     )
 }

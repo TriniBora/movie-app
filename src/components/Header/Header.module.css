@@ -25,3 +25,13 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.avatar{
+    height: 50px;
+    width: 50px;
+    color: transparent;
+    background-image: url(../../assets/img/profile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

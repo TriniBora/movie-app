@@ -45,6 +45,8 @@ const useGetMoviesOrSeries = ( url ) => {
         getRandomValue();
     }, [ data ] );
 
+    console.log( randomValue );
+
 
     return [ data, error, loading, randomValue, randomImg ];
 

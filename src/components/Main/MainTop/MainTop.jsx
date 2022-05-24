@@ -10,6 +10,7 @@ const MainTop = () => {
     return (
         <div className={ styles.container }>
             { data && <img className={ styles.image } src={ randomImg } alt="Upcoming movie poster" /> }
+            {/* <p>{ randomValue }</p> */ }
         </div>
     )
 }

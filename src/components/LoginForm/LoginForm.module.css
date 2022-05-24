@@ -1,0 +1,36 @@
+.bg{
+    background-image: url(../../assets//img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    filter: opacity(80%);
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    background-color: rgba(0,0,0,0.75);
+    padding: 60px 68px 40px;
+    min-height: 40vh;
+    max-width: 40%;
+}
+
+.title{
+    color: #fff;
+    font-weight: 700;  
+}
+
+.form{
+    width: 100%;
+}
+
+.btnForm{
+    font-weight: 700;    
+}
