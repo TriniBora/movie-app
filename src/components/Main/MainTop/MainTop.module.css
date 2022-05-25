@@ -1,15 +1,32 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: relative;
+    display:inline-block;
+    text-align: left;
     height: 80vh;
 }
 
 .image{
-        position: absolute;
-        top: 10vh; 
-        left: 0px; 
-        right: 0px; 
-        width: 100%; 
-    
+    position: absolute;
+    top: 10vh; 
+    left: 0px; 
+    right: 0px; 
+    width: 100%;
+    opacity: 0.5;
+}
+
+.textContainer{
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    left: 20px;
+    z-index: 1;
+}
+
+.title{
+    text-transform: uppercase;
+    max-width: 30%;
+}
+
+.description{    
+    max-width: 50%;
 }

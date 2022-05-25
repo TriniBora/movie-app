@@ -26,6 +26,8 @@ const useGetMoviesOrSeries = ( url ) => {
 
     const [ randomValue, setRandomValue ] = useState( null );
     const [ randomImg, setRandomImg ] = useState( null );
+    const [ randomTitle, setRandomTitle ] = useState( null );
+    const [ randomOverview, setRandomOverview ] = useState( null );
 
     const getRandomValue = () => {
         if ( data.length === 0 ) {
@@ -38,6 +40,8 @@ const useGetMoviesOrSeries = ( url ) => {
                 1280
             );
             setRandomImg( backgroundImage );
+            setRandomTitle( selectedValue.title );
+            setRandomOverview( selectedValue.overview );
         }
     };
 
@@ -48,7 +52,7 @@ const useGetMoviesOrSeries = ( url ) => {
     console.log( randomValue );
 
 
-    return [ data, error, loading, randomValue, randomImg ];
+    return [ data, error, loading, randomValue, randomImg, randomTitle, randomOverview ];
 
 }
 

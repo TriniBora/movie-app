@@ -11,27 +11,40 @@
     z-index: 1000;
 }
 
-.user{
-    display: flex;
-    justify-content:space-between;
+.navLogo{
     width: 15%;
 }
 
+.navUser{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user{
+    display: flex;
+    justify-content:flex-end;
+    width: 5%;
+    
+}
+
+.user > button{
+    border: none;
+    outline: none;
+    background: none;
+}
+
 .logo{
-    height: 50px;
-    width: 150px;
-    background-image: url(../../assets/img/Netflix-Logo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    width: 80%;
+}
+
+.navbar{
+    width: 100%;
+
 }
 
 .avatar{
-    height: 50px;
-    width: 50px;
-    color: transparent;
-    background-image: url(../../assets/img/profile.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    width: 30px;
+    border-radius: 5px;
+   
 }
