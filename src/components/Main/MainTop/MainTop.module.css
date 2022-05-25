@@ -2,7 +2,7 @@
     display: relative;
     display:inline-block;
     text-align: left;
-    height: 80vh;
+    height: 70vh;
 }
 
 .image{
@@ -17,16 +17,23 @@
 .textContainer{
     position: absolute;
     color: #fff;
-    top: 40%;
+    top: 30%;
     left: 20px;
     z-index: 1;
 }
 
 .title{
     text-transform: uppercase;
-    max-width: 30%;
+    max-width: 35%;
 }
 
 .description{    
     max-width: 50%;
+}
+
+.cta{
+    width: 50%;
+    display:flex;
+    gap: 1rem;
+
 }

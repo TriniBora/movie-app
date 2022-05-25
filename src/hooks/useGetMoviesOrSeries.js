@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { apiEndpoints } from '../api/apiConfig';
 import { apiImgUrl } from "../api/constants";
-import randomNumber from "../utils/randomNumber";
+import randomElement from "../utils/randomElement";
+import truncateOverview from "../utils/truncateOverview";
 
 const useGetMoviesOrSeries = ( url ) => {
 
@@ -33,7 +34,7 @@ const useGetMoviesOrSeries = ( url ) => {
         if ( data.length === 0 ) {
             return;
         } else {
-            const selectedValue = data[ randomNumber( 0, data.length - 1 ) ];
+            const selectedValue = randomElement( data );
             setRandomValue( selectedValue );
             const backgroundImage = apiImgUrl(
                 selectedValue.backdrop_path,
@@ -41,7 +42,8 @@ const useGetMoviesOrSeries = ( url ) => {
             );
             setRandomImg( backgroundImage );
             setRandomTitle( selectedValue.title );
-            setRandomOverview( selectedValue.overview );
+            const overview = truncateOverview( selectedValue.overview );
+            setRandomOverview( overview );
         }
     };
 

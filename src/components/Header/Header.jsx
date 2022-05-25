@@ -20,6 +20,8 @@ const Header = () => {
                     <div className={ styles.navbar }><MenuNavbar /></div>
                     <div className={ styles.user }>
                         <button onClick={ logout }><img className={ styles.avatar } src={ Avatar } alt="avatar" /></button>
+                        <span class="material-icons"><span class="material-icons">arrow_drop_down
+                        </span></span>
                     </div>
                 </div>
                     : "" }
