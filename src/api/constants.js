@@ -1,8 +1,8 @@
-const baseUrl = `https://api.themoviedb.org/3/`;
+const baseUrl = process.env.REACT_APP_API;
 
-const imgBaseUrl = `https://image.tmdb.org/t/p`;
+const imgBaseUrl = process.env.REACT_APP_IMG;
 
-const apiKey = `ad39e3389deecacb24412a4ad52e250f`;
+const apiKey = process.env.REACT_APP_KEY;
 
 export const apiUrl = ( category, subcategoryOrId ) => {
     //category: movie, tv
